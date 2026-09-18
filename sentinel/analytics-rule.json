@@ -1,0 +1,7 @@
+{
+  "name": "Beacon periodicity",
+  "intervalMinutes": 5,
+  "lookbackHours": 1,
+  "queryFile": "analytics-rule.kql",
+  "incidentCreation": "enabled"
+}

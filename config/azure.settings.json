@@ -1,0 +1,9 @@
+{
+  "_comment": "Unread until swap-in. A free ADX cluster has no managed identity. Do not put a key in this file.",
+  "EventHubConnection__fullyQualifiedNamespace": "YOUR_NAMESPACE.servicebus.windows.net",
+  "EventHubConnection__credential": "managedidentity",
+  "AzureWebJobsStorage__accountName": "YOUR_STORAGE_ACCOUNT",
+  "LogsIngestion__endpoint": "",
+  "LogsIngestion__ruleId": "",
+  "LogsIngestion__stream": "Custom-BeaconSightings_CL"
+}

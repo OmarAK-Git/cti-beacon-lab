@@ -1,0 +1,6 @@
+{
+  "trigger": "incident created",
+  "condition": { "analyticsRuleName": "Beacon periodicity" },
+  "action": "run playbook",
+  "_comment": "Not an ARM export. Do not condition on incident title."
+}

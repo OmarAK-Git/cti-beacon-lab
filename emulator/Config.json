@@ -1,0 +1,36 @@
+{
+  "UserConfig": {
+    "NamespaceConfig": [
+      {
+        "Type": "EventHub",
+        "Name": "emulatorNs1",
+        "Entities": [
+          {
+            "Name": "raw-events",
+            "PartitionCount": "2",
+            "ConsumerGroups": [
+              {
+                "Name": "fn"
+              }
+            ]
+          },
+          {
+            "Name": "normalized-events",
+            "PartitionCount": "2",
+            "ConsumerGroups": [
+              {
+                "Name": "adx"
+              },
+              {
+                "Name": "test-reader"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "LoggingConfig": {
+      "Type": "File"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+// Stands in for a hunt you run on the cluster.
+// The Sentinel analytics rule uses the same query.
+// Change only the source table at swap-in.
+// This is not the C# grader.
+BeaconSightings
+| where TimeGenerated >= ago(1d)
+| sort by DeviceName asc, DestinationDomain asc, TimeGenerated asc
+| serialize
+| extend PrevTime = prev(TimeGenerated), PrevDevice = prev(DeviceName), PrevDomain = prev(DestinationDomain)
+| where DeviceName == PrevDevice and DestinationDomain == PrevDomain
+| extend GapSeconds = datetime_diff("second", TimeGenerated, PrevTime)
+| summarize Calls = count(), AvgGap = avg(GapSeconds), StdevGap = stdev(GapSeconds) by DeviceName, DestinationDomain
+| where Calls >= 8 and AvgGap > 0 and StdevGap / AvgGap < 0.25
+| project DeviceName, DestinationDomain, Calls, AvgGap, Cv = StdevGap / AvgGap

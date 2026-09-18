@@ -1,0 +1,8 @@
+{
+  "DeviceName": "Host",
+  "AccountName": "Account",
+  "DestinationIp": "IP",
+  "DestinationDomain": "DNS",
+  "Sha256": "FileHash",
+  "ProcessName": "Process"
+}
